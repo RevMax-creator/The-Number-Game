@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Game</title>
+    <style>
+      
+      body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            flex-direction: column;
+        }
+        .winning-message {
+            font-size: 2em;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffcc00;
+            animation: fall 2s infinite;
+        }
+        .confetti:nth-child(odd) {
+            background-color: #ff69b4;
+        }
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="winning-message">You guessed it right! Your score is: <span id="score"></span></div>
+    <div id="left-popper" class="party-popper"></div>
+    <div id="right-popper" class="party-popper"></div>
+    <script src="script.js"></script>
+</body>
+</html>
